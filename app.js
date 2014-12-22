@@ -87,11 +87,10 @@ app.post('/cartonistas/:id/cartoes', function (request, response) {
      if (!cartonista.cartoes) cartonista.cartoes = [];
      
      var cartao = request.body;
-     console.log("Inclusão de cartões: " + cartao); 
      cartonista.cartoes.push(cartao.number);
      cartoes[cartao.number] = cartao;
 
-     response.sendStatus(201);
+     response.status(201).json(cartao);
  
   } else {
     response.sendStatus(404);
