@@ -19,7 +19,7 @@ exports.salvar = function(cartonista, callback) {
 exports.obterPorId = function(id, callback) {
     var registro = cartonistas[id];
     if (registro) return callback(null, registro);
-    else callback(true, null);
+    callback(true, null);
 };
 
 
@@ -37,12 +37,11 @@ exports.deletar = function (id, callback) {
 exports.salvarReferenciaCartao = function (id, number, callback) {
     exports.obterPorId(id, function (err, data) {
        if(err) return callback(err, null);
-       if (data) {
-         if(!cartonistas[id].cartoes) cartonistas[id].cartoes = [];
-         cartonistas[id].cartoes.push(number); 
-         callback(null, number);
-       }
-       callback(true, null);
+       if (!data) return  callback(true, null);
+
+       if(!cartonistas[id].cartoes) cartonistas[id].cartoes = [];
+       cartonistas[id].cartoes.push(number); 
+       callback(null, number);
     });
 };
 
