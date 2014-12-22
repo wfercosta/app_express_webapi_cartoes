@@ -1,0 +1,8 @@
+#! /usr/bin/env node
+
+var PORT_NUMBER = process.env.PORT || 8080;
+var app = require('./../app');
+
+app.listen(PORT_NUMBER, function() {
+  console.log("Servidor ouvindo na porta %d", PORT_NUMBER); 
+});
