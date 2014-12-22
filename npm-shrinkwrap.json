@@ -4,7 +4,8 @@
   "dependencies": {
     "ejs": {
       "version": "1.0.0",
-      "from": "ejs@"
+      "from": "ejs@1.0.0",
+      "resolved": "https://registry.npmjs.org/ejs/-/ejs-1.0.0.tgz"
     },
     "express": {
       "version": "4.9.8",
@@ -243,6 +244,10 @@
           }
         }
       }
+    },
+    "underscore": {
+      "version": "1.7.0",
+      "from": "underscore@"
     },
     "mocha": {
       "version": "2.0.1",
